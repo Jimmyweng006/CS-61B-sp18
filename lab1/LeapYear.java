@@ -3,6 +3,17 @@
  */
 public class LeapYear {
 
+    /** leap year is divisible by 400 or divisible by 4 and not divisible by 100.  
+    @param year to be analyzed
+    */
+    public static boolean isLeapYear(int year) {
+        if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     /** Calls isLeapYear to print correct statement.
      *  @param  year to be analyzed
      */
@@ -20,7 +31,7 @@ public class LeapYear {
             System.out.println("Please enter command line arguments.");
             System.out.println("e.g. java Year 2000");
         }
-        for (int i = 0; i < args.length; i++) {
+        for (int i = 1; i < args.length; i++) {
             try {
                 int year = Integer.parseInt(args[i]);
                 checkLeapYear(year);
